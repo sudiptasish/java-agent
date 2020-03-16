@@ -1,27 +1,3 @@
-/* $Header: AgentLogger.java Sep 26, 2015 schanda  Exp $ */
-
-/* Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved. */
-
-/*
-   DESCRIPTION
-    <short description of component this file declares/defines>
-
-   PRIVATE CLASSES
-    <list of private classes defined - with one-line descriptions>
-
-   NOTES
-    <other useful comments, qualifications, etc.>
-
-   MODIFIED    (MM/DD/YY)
-    schanda     Sep 26, 2015 - Creation
- */
-
-/**
- * @version $Header: AgentLogger.java Sep 26, 2015 schanda  Exp $
- * @author  schanda
- * @since   release specific (what release of product did this appear in)
- */
-
 package com.sc.hm.jvm.agent.util;
 
 import java.io.BufferedWriter;
@@ -50,6 +26,11 @@ import java.util.concurrent.locks.ReentrantLock;
 import com.sc.hm.jvm.agent.AgentArgMetadata;
 import com.sc.hm.jvm.agent.AgentMainUtil;
 
+/**
+ * Agent logger class.
+ * 
+ * @author Sudiptasish Chanda
+ */
 public final class AgentLogger {
 	
 	private static final String template = "{0} [{1}] [{2}] {3}";	// Timestamp Severity Thread Message

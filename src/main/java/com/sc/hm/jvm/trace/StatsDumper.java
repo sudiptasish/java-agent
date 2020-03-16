@@ -1,33 +1,15 @@
-/* $Header: StatsDumper.java Sep 22, 2015 schanda  Exp $ */
-
-/* Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved. */
-
-/*
-   DESCRIPTION
-    <short description of component this file declares/defines>
-
-   PRIVATE CLASSES
-    <list of private classes defined - with one-line descriptions>
-
-   NOTES
-    <other useful comments, qualifications, etc.>
-
-   MODIFIED    (MM/DD/YY)
-    schanda     Sep 22, 2015 - Creation
- */
-
-/**
- * @version $Header: StatsDumper.java Sep 22, 2015 schanda  Exp $
- * @author  schanda
- * @since   release specific (what release of product did this appear in)
- */
-
 package com.sc.hm.jvm.trace;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * This class is used extract the composite statistics and store it in tabular format.
+ * Later the tabular data will be dumped to the HTML file.
+ * 
+ * @author Sudiptasish Chanda
+ */
 public class StatsDumper implements Dumper {
 	
 	private int statsCount = 0;

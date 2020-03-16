@@ -1,27 +1,3 @@
-/* $Header: SCAgentMXBeanImpl.java Jan 28, 2017 schanda  Exp $ */
-
-/* Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved. */
-
-/*
-   DESCRIPTION
-    <short description of component this file declares/defines>
-
-   PRIVATE CLASSES
-    <list of private classes defined - with one-line descriptions>
-
-   NOTES
-    <other useful comments, qualifications, etc.>
-
-   MODIFIED    (MM/DD/YY)
-    schanda     Jan 28, 2017 - Creation
- */
-
-/**
- * @version $Header: SCAgentMXBeanImpl.java Jan 28, 2017 schanda  Exp $
- * @author  schanda
- * @since   release specific (what release of product did this appear in)
- */
-
 package com.sc.hm.jvm.agent.mbean;
 
 import java.lang.instrument.UnmodifiableClassException;
@@ -32,6 +8,10 @@ import com.sc.hm.jvm.agent.util.AgentLogger;
 import com.sc.hm.jvm.agent.util.AgentLogger.SEVERITY;
 import com.sc.hm.jvm.trace.TraceHelper;
 
+/**
+ * 
+ * @author Sudiptasish Chanda
+ */
 public class SCAgentMXBeanImpl implements SCAgentMXBean {
 
     /* (non-Javadoc)
