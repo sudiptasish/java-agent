@@ -1,33 +1,13 @@
-/* $Header: TablularData.java Oct 6, 2015 schanda  Exp $ */
-
-/* Copyright (c) 2013, Oracle and/or its affiliates. All rights reserved. */
-
-/*
-   DESCRIPTION
-    <short description of component this file declares/defines>
-
-   PRIVATE CLASSES
-    <list of private classes defined - with one-line descriptions>
-
-   NOTES
-    <other useful comments, qualifications, etc.>
-
-   MODIFIED    (MM/DD/YY)
-    schanda     Oct 6, 2015 - Creation
- */
-
-/**
- * @version $Header: TablularData.java Oct 6, 2015 schanda  Exp $
- * @author  schanda
- * @since   release specific (what release of product did this appear in)
- */
-
 package com.sc.hm.jvm.trace;
 
 import java.util.LinkedList;
 import java.util.Properties;
 import java.util.Queue;
 
+/**
+ * 
+ * @author Sudiptasish Chanda
+ */
 public class TabularData {
 
     private Properties metadata = new Properties();
