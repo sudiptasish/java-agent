@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<!--######################################################################### -->
+<!--        Build file for Java Agent 							              -->
+<!--                  Used by Jakarta Ant ver. 1.4.1                          -->
+<!--######################################################################### -->
+
+<project name="java-agent" default="all" basedir=".">
+    <property file="build.properties"/>
+    <property name="build.dest.dir" value="${build}/classes" />
+	
+    <!-- Build dependencies (jar files) for the source code =========== -->
+    <path id="build.dependencies">
+        <!-- Add the jars in the "lib" directory (extra jars)        -->
+        <fileset dir="${lib}">
+            <include name="*.jar" />
+        </fileset>
+    </path>
+
+    <target name="all" depends="clean, init, jar"/>
+    
+    <target name="clean">
+        <echo message="deleting build directory"/>
+        <delete dir="${build}"/>
+        <echo message="deleting deploy directory"/>
+        <delete dir="${deploy}"/>
+    </target>
+	
+    <target name="init">
+        <tstamp/>
+        <mkdir dir="${build}"/>
+        <mkdir dir="${deploy}"/>
+        <mkdir dir="${build.dest.dir}"/>
+    </target>
+
+    <target name="compileall">
+        <echo message="Compiling all files"/>
+        <javac destdir="${build.dest.dir}" optimize="true" deprecation="on" includes="**/*.java" fork="true" debug="on">
+            <classpath>
+                <path refid="build.dependencies" />
+                <pathelement location="${build.dest.dir}"/>
+            </classpath>
+            <src path="${source}"/>
+        </javac>
+    </target>
+	
+    <target name="jar" depends="compileall">
+        <echo message="Creating Java Agent Jar"/>
+        <jar destfile="${deploy}/${app}-${version}.jar">
+            <fileset dir="${build.dest.dir}"/>
+            <manifest>
+                <attribute name="Class-Path" value="../lib/javassist-3.12.1.GA.jar ../lib/jdk.tools-1.8.jar ../lib/sa-jdi.jar"/>
+                <attribute name="Main-Class" value="com.sc.hm.jvm.main.AgentLoader"/>
+                <attribute name="Premain-Class" value="com.sc.hm.jvm.main.JavaAgentMain"/>
+                <attribute name="Agent-Class" value="com.sc.hm.jvm.main.JavaAgentMain"/>
+                <attribute name="Can-Redefine-Classes" value="true"/>
+                <attribute name="Can-Retransform-Classes" value="true"/>
+                <attribute name="Can-Set-Native-Method-Prefix" value="true"/>
+            </manifest>
+        </jar>
+    </target>
+</project>
