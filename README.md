@@ -1,3 +1,6 @@
+## My Note
+Do you like playing with class file bytes? How about manipulating the raw class bytes in the JVM, keeping the old version somewhere in JVM, inject code during runtime, changing the behavior of any newly constructed objects, later bring back the old class definition ?
+
 ## Summary
 Often there is a need to **profile** your java application, in order to find out various pressure point. Profiling is the process of monitoring various JVM level parameters such as Thread Local Allocation Buffer, Classloader Statistics, Method Execution, String pool Statistics, Thread Execution, Object Creation, Garbage Collection, I/Os, etc. It provides with a finer view of the target application execution and its resource utilisation. It further eliminates the need to spend long hours going through the code, and pinpoints the problems associated with your application.
 
